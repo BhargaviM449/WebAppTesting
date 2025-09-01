@@ -57,9 +57,14 @@ export class RegistrationPage {
      * Sets the telephone number in the registration form
      * @param tel - Telephone number to enter
      */
+    // async setTelephone(tel: string): Promise<void> {
+    //     await this.txtTelephone.fill(tel);
+    // }
+
     async setTelephone(tel: string): Promise<void> {
-        await this.txtTelephone.fill(tel);
-    }
+    await this.txtTelephone.waitFor({ state: 'visible' });
+    await this.txtTelephone.fill(tel);
+}
 
     /**
      * Sets the password in the registration form
